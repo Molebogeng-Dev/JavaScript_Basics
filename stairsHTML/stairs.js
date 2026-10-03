@@ -1,17 +1,20 @@
 window.prompt(`Enter number of stairs: `);
 console.log(`loaded`);
-let num = Number(window.prompt(`Enter number of stairs: `));
-let hash = "#";
-let space = " ";
-let append = document.getElementById("stairs");
+const num = Number(window.prompt(`Enter number of stairs: `));
+const hash = "#";
+const space = " ";
+const append = document.getElementById("stairs");
 
+stairz(num);
 
-for(let x = 0; x <= num; x++){
-    for(let y = 0; y <= num - x; y++){
-        append.innerHTML += space
+function stairz(number){
+    for(let x = 0; x <= number; x++){
+        for(let y = 0; y <= number - x; y++){
+            append.innerHTML += space
+        }
+        for(let y = 0; y <= x; y++){
+            append.innerHTML += hash
+        }
+        append.innerHTML += "<br>"
     }
-    for(let y = 0; y <= x; y++){
-        append.innerHTML += hash
-    }
-    append.innerHTML += "<br>"
 }
